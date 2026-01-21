@@ -1,0 +1,28 @@
+<section class="home">
+    <header class="home-header">
+        <div>
+            <h1>All Contacts</h1>
+        </div>
+        <a class="btn" routerLink="/create">Create contact</a>
+    </header>
+
+    @if (contacts().length === 0) {
+    <p class="empty">No contacts yet. Create your first contact.</p>
+    } @else {
+    <ul class="contact-list">
+        @for (contact of contacts(); track contact.id) {
+        <li>
+            <a class="contact-link" [routerLink]="['/edit', contact.id]">
+                <img [src]="getAvatar(contact)" [alt]="contact.name" />
+                <div>
+                    <h3>{{ contact.name }}</h3>
+                    <p>{{ contact.phone }}</p>
+                    <p>{{ contact.email }}</p>
+                    <p>{{ contact.address }}</p>
+                </div>
+            </a>
+        </li>
+        }
+    </ul>
+    }
+</section>

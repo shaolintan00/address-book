@@ -1,0 +1,39 @@
+<section class="page">
+    <header class="page-header">
+        <div>
+            <a class="ghost-link" routerLink="/home">Back to contacts</a>
+            <h1>Create Contact</h1>
+        </div>
+    </header>
+
+    <form class="card" (ngSubmit)="save()" #contactForm="ngForm">
+        <label>
+            Name
+            <input type="text" name="name" [(ngModel)]="form.name" required placeholder="Full name" />
+        </label>
+
+        <label>
+            Phone
+            <input type="text" name="phone" [(ngModel)]="form.phone" required placeholder="Phone number" />
+        </label>
+
+        <label>
+            Email
+            <input type="email" name="email" [(ngModel)]="form.email" required placeholder="Email address" />
+        </label>
+
+        <label>
+            Address
+            <input type="text" name="address" [(ngModel)]="form.address" required placeholder="Mailing address" />
+        </label>
+
+        <label>
+            Avatar URL
+            <input type="url" name="avatar" [(ngModel)]="form.avatar" placeholder="https://..." />
+        </label>
+
+        <div class="form-actions">
+            <button type="submit" [disabled]="contactForm.invalid">Create</button>
+        </div>
+    </form>
+</section>
