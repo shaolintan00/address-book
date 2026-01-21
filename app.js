@@ -4,7 +4,7 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://shaolintan0_db_user:EJ1aItRktUf4chJJ@cluster0.bchvrls.mongodb.net/addressbook';
+const MONGODB_URI = process.env.MONGODB_URI || '';
 
 app.use(express.json());
 app.use((req, res, next) => {
